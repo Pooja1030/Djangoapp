@@ -1,0 +1,7 @@
+<h1>Delete the Person</h1>
+<p>Are you sure you want to delete "{{ person.first_name }} {{ person.last_name }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+</form>
+<a href="{% url 'get_all_person' %}">Cancel</a>

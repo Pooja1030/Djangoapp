@@ -1,0 +1,12 @@
+<!-- storefront/templates/storefront/show_all_person.html -->
+
+<h1>All Persons</h1>
+<ul>
+    {% for person in persons %}
+        <li>{{ person.first_name }} {{ person.last_name }} - Age: {{ person.age }} 
+            <a href="{% url 'update_person' person.id %}">Edit</a> 
+            <a href="{% url 'delete_person' person.id %}">Delete</a></li>
+    {% endfor %}
+</ul>
+<!-- <a href="{% url 'get_all_person' %}">View All Persons</a> -->
+<a href="{% url 'add_person' %}">Add New Person</a>
