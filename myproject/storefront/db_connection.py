@@ -11,8 +11,6 @@ import os
 mongo_client = MongoClient(
     host=os.getenv('MONGO_DB_HOST', 'mongo'),
     port=int(os.getenv('MONGO_DB_PORT', 27017)),
-    username=os.getenv('MONGO_DB_USER'),
-    password=os.getenv('MONGO_DB_PASSWORD'),
 )
 
 db = mongo_client[os.getenv('MONGO_DB_NAME')]
