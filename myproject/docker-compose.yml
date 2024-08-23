@@ -6,20 +6,21 @@ services:
       - .:/app
     ports:
       - "8000:8000"
-    depends_on:
-      - mongo
-    environment:
-      - MONGO_DB_HOST=mongo
-      - MONGO_DB_PORT=27017
-      - MONGO_DB_NAME=test_mongo
+      
+#     depends_on:
+#       - mongo
+#     environment:
+#       - MONGO_DB_HOST=mongo
+#       - MONGO_DB_PORT=27017
+#       - MONGO_DB_NAME=test_mongo
 
       
-  mongo:
-    image: mongo:5.0
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongodata:/data/db
+#   mongo:
+#     image: mongo:5.0
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongodata:/data/db
 
-volumes:
-  mongodata:
+# volumes:
+#   mongodata:
