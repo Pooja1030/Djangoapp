@@ -6,6 +6,9 @@
 
 from django.db import models
 
+
+# Created Location, JobTitle, Skill Model
+
 class Location(models.Model):
     city = models.CharField(max_length=100)
     country = models.CharField(max_length=100)

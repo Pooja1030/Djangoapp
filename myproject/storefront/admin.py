@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import Person, Skill, Location, JobTitle
 
+
+# Updated the admin 
+
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'age', 'location', 'job_title')

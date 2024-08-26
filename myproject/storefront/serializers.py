@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Person, Location, JobTitle, Skill
 
+# Created Location, JobTitle, Skill serializer and updated the PersonSerializer
+
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
