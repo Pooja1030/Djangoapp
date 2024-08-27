@@ -20,10 +20,9 @@ class SkillSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PersonSerializer(serializers.ModelSerializer):
-    location = LocationSerializer()
-    job_title = JobTitleSerializer()
+    location = serializers.PrimaryKeyRelatedField(queryset=Location.objects.all())
+    job_title = serializers.PrimaryKeyRelatedField(queryset=JobTitle.objects.all())
     skills = serializers.PrimaryKeyRelatedField(queryset=Skill.objects.all(), many=True)
-    
 
     class Meta:
         model = Person

@@ -1,14 +1,6 @@
-# from django.db import models
-# from .db_connection import db
-
-# # Create your models here.
-# person_collection = db['storefront']
-
 from django.db import models
 
-
-# Created Location, JobTitle, Skill Model
-
+# Location model -- includes city and country
 class Location(models.Model):
     city = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
@@ -17,12 +9,16 @@ class Location(models.Model):
         return f"{self.city}, {self.country}"
 
 
+# JobTitle model -- includes title of the job
 class JobTitle(models.Model):
     title = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
 
+
+
+# Skill model -- includes skill name 
 class Skill(models.Model):
     name = models.CharField(max_length=100)
 
@@ -30,7 +26,7 @@ class Skill(models.Model):
         return self.name
 
 
-
+# Person model -- includes the details of the person
 class Person(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
