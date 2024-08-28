@@ -17,5 +17,5 @@ ENV DJANGO_SETTINGS_MODULE=myproject.settings
 # Expose the port that the app runs on
 EXPOSE 8000
 
-# Run Django's development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Run tests and then start Django's development server
+CMD ["sh", "-c", "python manage.py test && python manage.py runserver 0.0.0.0:8000"]
